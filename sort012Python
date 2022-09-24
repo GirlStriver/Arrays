@@ -1,0 +1,20 @@
+class Solution:
+    def sortColors(self, nums: List[int]) -> None:
+        lo = 0 
+        hi = len(nums) - 1 
+        mid = 0 
+        temp = 0
+        while (mid <= hi):
+            c = nums[mid]
+            if (c == 0):
+                nums[lo], nums[mid] = nums[mid], nums[lo]
+                lo += 1  
+                mid += 1  
+                
+            if (c == 1): 
+                mid += 1  
+            
+            if (c == 2):
+                nums[mid], nums[hi] = nums[hi], nums[mid]
+                hi -= 1 
+        
